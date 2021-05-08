@@ -1,0 +1,254 @@
+#app {
+  background-color: #fff;
+}
+
+#snapshot {
+  padding: 80px 0 150px 0;
+  margin: 0 auto;
+}
+
+* path,
+* circle {
+  stroke-width: 3px;
+}
+
+.md-app {
+  height: 100vh;
+}
+
+.md-app .md-toolbar {
+  position: -webkit-sticky;
+  position: sticky;
+}
+
+#single-diagram-container {
+  position: relative;
+  margin: 0 auto;
+  border: 3px solid black;
+  padding: 15px;
+  margin-top: 100px;
+  background: #fff;
+}
+
+#single-diagram-container .input {
+  font-size: 20px;
+}
+
+#single-diagram-container .main-circuit-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+#single-diagram-container .main-circuit-container .to {
+  font-size: 20px;
+  position: absolute;
+  right: -100px;
+  top: -20px;
+}
+
+#single-diagram-container .main-circuit-container .main-circuit {
+  padding-top: 20px;
+  width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 40px;
+}
+
+#single-diagram-container .main-circuit-container .main-circuit span {
+  word-break: break-all;
+}
+
+#single-diagram-container .main-circuit-container .main-circuit svg {
+  margin-left: -3px;
+  background: #fff;
+  position: relative;
+  min-width: 46px;
+}
+
+#single-diagram-container .main-circuit-container .main-circuit-line {
+  border: 3px solid black;
+  position: absolute;
+  left: 50%;
+  width: 100%;
+  top: -100px;
+  bottom: 55px;
+  border-bottom: none;
+  border-right: none;
+}
+
+#single-diagram-container .main-circuit-container .main-circuit-line .size {
+  position: absolute;
+  top: -35px;
+  font-size: 18px;
+}
+
+#single-diagram-container .main-circuit-container .main-circuit-line .size-lines {
+  height: 23px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-transform: skew(-20deg);
+          transform: skew(-20deg);
+  position: absolute;
+  top: -13px;
+  left: 20px;
+}
+
+#single-diagram-container .main-circuit-container .main-circuit-line .size-lines .line {
+  height: inherit;
+  border-left: 2px solid black;
+  width: 3px;
+  margin-right: 3px;
+}
+
+#single-diagram-container .main-circuit-container .main-circuit-line .lines {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 10px 0;
+  width: 25px;
+}
+
+#single-diagram-container .main-circuit-container .main-circuit-line .lines .line {
+  border-bottom: 3px solid black;
+  width: inherit;
+  height: auto;
+}
+
+#single-diagram-container .main-circuit-container .main-circuit-line .triangle {
+  position: absolute;
+  right: 0;
+  top: -34px;
+  background: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#single-diagram-container .main-circuit-container .main-circuit-line .triangle svg {
+  -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+          order: 1;
+}
+
+#single-diagram-container .main-circuit-container .main-circuit-line .triangle.VECO {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+#single-diagram-container .circuits {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+#single-diagram-container .circuit {
+  position: relative;
+  -webkit-box-flex: 50%;
+      -ms-flex: 50%;
+          flex: 50%;
+  text-align: center;
+  border-bottom: 3px solid black;
+  margin-bottom: 40px;
+}
+
+#single-diagram-container .circuit .ckt-no {
+  font-size: 20px;
+  text-transform: uppercase;
+  position: absolute;
+  top: -10px;
+  width: 180px;
+}
+
+#single-diagram-container .circuit:not(.right) .ckt-no {
+  right: 135px;
+  text-align: right;
+}
+
+#single-diagram-container .circuit.right .ckt-no {
+  left: 135px;
+  text-align: left;
+}
+
+#single-diagram-container .circuit svg {
+  margin-bottom: -13px;
+  background: #fff;
+}
+
+#single-diagram-container .circuit:not(.right) .before {
+  left: -85px;
+}
+
+#single-diagram-container .circuit.right .before {
+  right: -85px;
+}
+
+#single-diagram-container .circuit.right .after {
+  right: -100px;
+  border-left-color: black;
+}
+
+#single-diagram-container .circuit:not(.right) .after {
+  left: -100px;
+  border-right-color: black;
+}
+
+#single-diagram-container .circuit .after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  border: 10px solid transparent;
+}
+
+#single-diagram-container .circuit.hidden {
+  opacity: 0;
+}
+
+#single-diagram-container .circuit .before {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  background: black;
+  height: 3px;
+  width: 120px;
+}
+
+#single-diagram-container .footer {
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+
+#single-diagram-container .footer svg {
+  position: absolute;
+  right: 10px;
+  top: 15px;
+}
+
+#single-diagram-container .footer .title {
+  position: absolute;
+  margin-top: 130px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: 20px;
+  text-decoration: underline;
+}
+/*# sourceMappingURL=style.css.map */

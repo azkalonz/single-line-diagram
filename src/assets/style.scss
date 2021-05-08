@@ -1,0 +1,201 @@
+$strk-width: 3px;
+$strk-color: rgb(0, 0, 0);
+$strk: $strk-width solid $strk-color;
+$cntr-padding: 15px;
+$ckt-margin: 40px;
+$main-cb-line-offset: 100px;
+$cntr-background: #fff;
+$arrow-size: 10px;
+$arrow-offset: 70px;
+
+#app {
+  background-color: $cntr-background;
+}
+#snapshot {
+  padding: 80px 0 150px 0;
+  margin: 0 auto;
+}
+* path,
+* circle {
+  stroke-width: $strk-width;
+}
+
+.md-app {
+  height: 100vh;
+  .md-toolbar {
+    position: sticky;
+  }
+}
+
+#single-diagram-container {
+  position: relative;
+  margin: 0 auto;
+  border: $strk;
+  padding: $cntr-padding;
+  margin-top: $main-cb-line-offset;
+  background: $cntr-background;
+  & .input {
+    font-size: 20px;
+  }
+  .main-circuit-container {
+    display: flex;
+    justify-content: flex-end;
+    .to {
+      font-size: 20px;
+      position: absolute;
+      right: -100px;
+      top: -20px;
+    }
+    .main-circuit {
+      padding-top: 20px;
+      width: 50%;
+      display: flex;
+      align-items: center;
+      margin-bottom: $ckt-margin;
+      span {
+        word-break: break-all;
+      }
+      svg {
+        margin-left: -3px;
+        background: $cntr-background;
+        position: relative;
+        min-width: 46px;
+      }
+    }
+    .main-circuit-line {
+      border: $strk;
+      position: absolute;
+      left: 50%;
+      width: 100%;
+      top: -$main-cb-line-offset;
+      bottom: $cntr-padding + $ckt-margin;
+      border-bottom: none;
+      border-right: none;
+      .size {
+        position: absolute;
+        top: -35px;
+        font-size: 18px;
+      }
+      .size-lines {
+        height: 23px;
+        display: flex;
+        transform: skew(-20deg);
+        position: absolute;
+        top: -13px;
+        left: 20px;
+        .line {
+          height: inherit;
+          border-left: 2px solid $strk-color;
+          width: 3px;
+          margin-right: 3px;
+        }
+      }
+      .lines {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 10px 0;
+        width: 25px;
+        .line {
+          border-bottom: $strk-width solid $strk-color;
+          width: inherit;
+          height: auto;
+        }
+      }
+      .triangle {
+        position: absolute;
+        right: 0;
+        top: -34px;
+        background: $cntr-background;
+        display: flex;
+        & svg {
+          order: 1;
+        }
+        &.VECO {
+          transform: rotate(180deg);
+        }
+      }
+    }
+  }
+  .circuits {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .circuit {
+    position: relative;
+    flex: 50%;
+    text-align: center;
+    border-bottom: $strk;
+    margin-bottom: $ckt-margin;
+    .ckt-no {
+      font-size: 20px;
+      text-transform: uppercase;
+      position: absolute;
+      top: -10px;
+      width: 180px;
+    }
+    &:not(.right) .ckt-no {
+      right: $cntr-padding + $arrow-offset + 50;
+      text-align: right;
+    }
+    &.right .ckt-no {
+      left: $cntr-padding + $arrow-offset + 50;
+      text-align: left;
+    }
+    svg {
+      margin-bottom: -13px;
+      background: $cntr-background;
+    }
+    &:not(.right) .before {
+      left: -$cntr-padding - $arrow-offset;
+    }
+    &.right .before {
+      right: -$cntr-padding - $arrow-offset;
+    }
+    &.right .after {
+      right: -$cntr-padding - ($arrow-offset + 15);
+      border-left-color: $strk-color;
+    }
+    &:not(.right) .after {
+      left: -$cntr-padding - ($arrow-offset + 15);
+      border-right-color: $strk-color;
+    }
+    & .after {
+      content: "";
+      position: absolute;
+      bottom: -$arrow-size;
+      border: $arrow-size solid transparent;
+    }
+
+    &.hidden {
+      opacity: 0;
+    }
+    & .before {
+      content: "";
+      position: absolute;
+      bottom: -$strk-width;
+      background: $strk-color;
+      height: $strk-width;
+      width: 50px + $arrow-offset;
+    }
+  }
+  .footer {
+    position: absolute;
+    left: 0;
+    right: 0;
+    svg {
+      position: absolute;
+      right: 10px;
+      top: 15px;
+    }
+    .title {
+      position: absolute;
+      margin-top: 130px;
+      left: 0;
+      right: 0;
+      text-align: center;
+      font-size: 20px;
+      text-decoration: underline;
+    }
+  }
+}
