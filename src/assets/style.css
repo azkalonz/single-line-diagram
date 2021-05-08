@@ -21,6 +21,10 @@
   position: sticky;
 }
 
+.md-dialog {
+  padding: 20px;
+}
+
 #single-diagram-container {
   position: relative;
   margin: 0 auto;
