@@ -9,7 +9,7 @@
         >
           <md-icon>menu</md-icon>
         </md-button>
-        <span class="md-title">Single Diagram Maker</span>
+        <span class="md-title">Single Line Diagram Generator</span>
       </md-app-toolbar>
 
       <md-app-drawer
@@ -39,11 +39,7 @@
           </template>
           <md-list-item @click="$router.push('/')">
             <md-icon>apps</md-icon>
-            <span class="md-list-item-text">App</span>
-          </md-list-item>
-          <md-list-item @click="$router.push('/test')">
-            <md-icon>list</md-icon>
-            <span class="md-list-item-text">Saved Diagrams</span>
+            <span class="md-list-item-text">Diagram</span>
           </md-list-item>
         </md-list>
       </md-app-drawer>
